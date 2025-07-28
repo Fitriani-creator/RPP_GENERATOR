@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator RPP - Pembelajaran Mendalam</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 40px;
+      background: #f9f9f9;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    textarea, input, select {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #output {
+      margin-top: 30px;
+      white-space: pre-wrap;
+      background: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🧠 Generator RPP - Perencanaan Pembelajaran Mendalam</h1>
+
+<form id="rppForm">
+  <label>Nama Guru:</label><input type="text" id="guru">
+  <label>Nama Sekolah:</label><input type="text" id="sekolah">
+  <label>Mata Pelajaran:</label><input type="text" id="mapel">
+  <label>Alokasi Waktu:</label><input type="text" id="waktu">
+  <label>Topik Pembelajaran:</label><input type="text" id="topik">
+  <label>Materi Spesifik:</label><input type="text" id="materi">
+
+  <h2>📌 Identifikasi Dimensi Profil Lulusan</h2>
+  <textarea id="kesiapan" placeholder="1. Mengidentifikasi kesiapan peserta didik"></textarea>
+  <textarea id="karakteristik" placeholder="2. Memahami karakteristik materi pelajaran"></textarea>
+  <textarea id="profil" placeholder="3. Menentukan dimensi profil lulusan"></textarea>
+
+  <h2>🎯 Desain Pembelajaran Mendalam</h2>
+  <textarea id="cp" placeholder="1. Capaian Pembelajaran"></textarea>
+  <textarea id="tujuan" placeholder="2. Tujuan Pembelajaran"></textarea>
+  <textarea id="kontekstual" placeholder="3. Topik Kontekstual dan Relevan"></textarea>
+  <textarea id="lintas" placeholder="4. Integrasi Lintas Disiplin"></textarea>
+  <textarea id="kerangka" placeholder="5. Kerangka Pembelajaran (praktis, kemitraan, lingkungan, digital)"></textarea>
+
+  <h2>📚 Pengalaman Belajar</h2>
+  <textarea id="prinsip" placeholder="1. Prinsip Pembelajaran (berkesadaran, bermakna, menggembirakan)"></textarea>
+  <textarea id="tahapan" placeholder="2. Tahapan Pembelajaran (awal, inti, penutup)"></textarea>
+  <textarea id="pengalaman" placeholder="3. Pengalaman Belajar (memahami, mengaplikasi, merefleksi)"></textarea>
+
+  <h2>📝 Asesmen Pembelajaran</h2>
+  <textarea id="asesmenAwal" placeholder="1. Asesmen Awal"></textarea>
+  <textarea id="asesmenProses" placeholder="2. Asesmen Proses"></textarea>
+  <textarea id="asesmenAkhir" placeholder="3. Asesmen Akhir"></textarea>
+
+  <h2>📄 LKPD</h2>
+  <textarea id="lkpd" placeholder="LKPD lengkap dengan jawaban"></textarea>
+  <textarea id="penilaian" placeholder="Penilaian sesuai LKPD"></textarea>
+  <textarea id="refleksi" placeholder="Refleksi siswa"></textarea>
+
+  <button type="button" onclick="generateRPP()">✅ Generate RPP</button>
+</form>
+
+<div id="output"></div>
+
+<script>
+  function generateRPP() {
+    const g = id => document.getElementById(id).value;
+
+    let output = `🧠 RPP - Perencanaan Pembelajaran Mendalam\n\n`;
+    output += `Nama Guru: ${g('guru')}\n`;
+    output += `Nama Sekolah: ${g('sekolah')}\n`;
+    output += `Mata Pelajaran: ${g('mapel')}\n`;
+    output += `Alokasi Waktu: ${g('waktu')}\n`;
+    output += `Topik Pembelajaran: ${g('topik')}\n`;
+    output += `Materi Spesifik: ${g('materi')}\n\n`;
+
+    output += `📌 Identifikasi Dimensi Profil Lulusan\n`;
+    output += `1. ${g('kesiapan')}\n`;
+    output += `2. ${g('karakteristik')}\n`;
+    output += `3. ${g('profil')}\n\n`;
+
+    output += `🎯 Desain Pembelajaran Mendalam\n`;
+    output += `1. Capaian Pembelajaran:\n${g('cp')}\n`;
+    output += `2. Tujuan Pembelajaran:\n${g('tujuan')}\n`;
+    output += `3. Topik Kontekstual dan Relevan:\n${g('kontekstual')}\n`;
+    output += `4. Integrasi Lintas Disiplin:\n${g('lintas')}\n`;
+    output += `5. Kerangka Pembelajaran:\n${g('kerangka')}\n\n`;
+
+    output += `📚 Pengalaman Belajar\n`;
+    output += `1. Prinsip Pembelajaran:\n${g('prinsip')}\n`;
+    output += `2. Tahapan Pembelajaran:\n${g('tahapan')}\n`;
+    output += `3. Pengalaman Belajar:\n${g('pengalaman')}\n\n`;
+
+    output += `📝 Asesmen Pembelajaran\n`;
+    output += `1. Asesmen Awal:\n${g('asesmenAwal')}\n`;
+    output += `2. Asesmen Proses:\n${g('asesmenProses')}\n`;
+    output += `3. Asesmen Akhir:\n${g('asesmenAkhir')}\n\n`;
+
+    output += `📄 LKPD:\n${g('lkpd')}\n`;
+    output += `📊 Penilaian:\n${g('penilaian')}\n`;
+    output += `🔍 Refleksi Siswa:\n${g('refleksi')}\n`;
+
+    document.getElementById('output').innerText = output;
+  }
+</script>
+
+</body>
+</html>
+add generator rpp web
